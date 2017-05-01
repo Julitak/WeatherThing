@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+body {
+	font-family: sans-serif;
+	background: url(../img/SKY.jpg);
+	color: rgba(255, 255 ,255, .8);
+}
+
+.container {
+	max-width: 1130px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgba(0, 0, 0, .4);
+	margin-top: 40px;
+	padding: 20px;
+
+	form {
+		#cityName, #submitBtn {
+
+			padding: 10px 20px;
+			border-style: none;
+			outline: none;
+			background-color: transparent;
+			font-size: 16px;
+			border: 1px solid rgba(255, 255, 255, .9);
+			border-radius: 4px;
+			color: #fff;
+
+		}
+
+		#cityName::placeholder{
+			color: rgba(255, 255, 255, .7);
+		}
+
+		#cityName:focus {
+			background-color: gray;
+		}
+
+		#submitBtn {
+
+		}
+	}
+
+	.wrapper {
+		display: none;
+	}
+
+	.show {
+		display: block;
+	}	
+
+	#forecast-current {
+		padding-bottom: 40px;
+	}
+
+	.daything {
+		display: flex;
+		justify-content: space-between;
+	}
+
+
+}
+
+
+
+

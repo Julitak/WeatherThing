@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WeatherThing</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app="weatherApp">
+
+	<div class="main" ng-controller="PostsCtrl">
+
+			<div class="container">
+
+			<form onsubmit="return false;">
+				<input type="text" name="city" id="cityName" placeholder="Enter City Name">
+				<input type="submit" name="submit" id="submitBtn" ng-click="clickButton()">
+			</form>
+
+			<div class='wrapper'>
+
+				<div id="forecast-current" class="hide">
+					<h1>Current Forecast</h1>
+					<div id="icon">
+					<img src="http://openweathermap.org/img/w/{{ stats.list[0].weather[0].icon }}.png"></div>
+					<div id="city-name">{{ stats.city.name + ' ' + stats.city.country }}</div>
+					<div id="current-time">{{ stats.list[0].dt_txt }}</div>
+					<div id="current-temperature">{{stats.list[0].main.temp + '&#8451;'}}
+					</div>
+					<div id="temperature-max">{{stats.list[0].main.temp_max + '&#8451;'}}</div>
+					<div id="temperature-min">{{stats.list[0].main.temp_min + '&#8451;'}}</div>
+					<div id="description">{{stats.list[0].weather[0].main}}</div>
+					<div id="humidity"></div>
+				</div>
+
+				<div class="daything">
+					<div ng-repeat="items in stats.list">
+						<div>{{ mySplit(stats.list[$index].dt_txt, 1) }}
+						</div>
+						<div id="icon">
+						<img src="http://openweathermap.org/img/w/{{ stats.list[$index].weather[0].icon }}.png"></div>
+						<div>{{ stats.list[$index].main.temp + '&#8451;' }}</div>
+						<div id="description">{{stats.list[$index].weather[0].main}}</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="scripts/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</body>
+
+</html>
